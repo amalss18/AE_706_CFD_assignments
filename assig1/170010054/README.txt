@@ -51,6 +51,11 @@ To generate the results given in the report follow the steps given below:
 	v) Find the plot in the plots directory.	
 
 
+Incase of any issues, reach out to me at 170010054@iitb.ac.in
+
+
+
+
 Incase any issues occur reach out to me at 170010054@iitb.ac.in
 
 

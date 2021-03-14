@@ -1,0 +1,130 @@
+\documentclass[a4paper,twoside,11pt]{article}
+\usepackage{a4wide,graphicx,fancyhdr,clrscode,tabularx,amsmath,amssymb,color,enumitem, subfig}
+
+\usepackage[english]{isodate}
+
+%----------------------- Macros and Definitions --------------------------
+
+\setlength\headheight{20pt}
+\addtolength\topmargin{-10pt}
+\addtolength\footskip{20pt}
+
+\fancypagestyle{plain}{%
+\fancyhf{}
+\fancyhead[LO,RE]{\sffamily AE 706}
+\fancyhead[RO,LE]{\sffamily Computational Fluid Dynamics}
+\fancyfoot[RO,LE]{\sffamily\bfseries\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO,RE]{\sffamily Computational Fluid Dynamics}
+\fancyhead[RO,LE]{\sffamily AE 706}
+\fancyfoot[RO,LE]{\sffamily\bfseries\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+
+\begin{document}
+
+
+\title{\vspace{-2\baselineskip}
+Assignment 2 Report}
+\author{Amal S Sebastian \\ {170010054}}
+
+\maketitle
+
+% \textbf{Error plots of all three schemes}
+\section*{Error plots of all three schemes}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=10cm, height=7cm]{../plots/"All Error plots".png}
+\end{figure}
+
+From the error plots we can clearly see that the Successive over relaxation scheme is far superior compared to the Point Jacobi and Point Gauss Seidel schemes as it converges very very quickly. We even notice that the Point Gauss Seidel scheme converges almost twice faster than the Point Jacobi Scheme.\\
+
+Number of iterations required to converge:
+\begin{itemize}
+  \item Point SOR : 141
+  \item Point Gauss Seidel: 3150
+  \item Point Jacobi : 5977
+\end{itemize}
+\newpage
+\section*{Comparison to exact solution}
+\subsection*{Point Jacobi scheme}
+  \begin{figure}[h]
+    \centering
+    \begin{minipage}{.5\textwidth}
+      \centering
+      \includegraphics[width=0.9\linewidth]{../plots/"pj5".png}
+      \label{fig:test1}
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+      \centering
+      \includegraphics[width=0.9\linewidth]{../plots/"pj1".png}
+      \label{fig:test2}
+    \end{minipage}
+    \end{figure}
+
+\subsection*{Point Gauss Seidel scheme}
+  \begin{figure}[h]
+    \centering
+    \begin{minipage}{.5\textwidth}
+      \centering
+      \includegraphics[width=0.9\linewidth]{../plots/"pgs4".png}
+      \label{fig:test1}
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+      \centering
+      \includegraphics[width=0.9\linewidth]{../plots/"pgs1".png}
+      \label{fig:test2}
+    \end{minipage}
+    \end{figure}
+
+\subsection*{Point SOR scheme}
+    \begin{figure}[h]
+      \centering
+      \begin{minipage}{.5\textwidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{../plots/"psor5".png}
+        \label{fig:test1}
+      \end{minipage}%
+      \begin{minipage}{.5\textwidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{../plots/"psor1".png}
+        \label{fig:test2}
+      \end{minipage}
+      \end{figure}
+
+
+From the plots we can clearly see that the computed solutions using all three schemes is in very good agreement with the exact solution.
+\section*{Contour plots}
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{.33\textwidth}
+    \centering
+    \includegraphics[height=1.\linewidth, width=\linewidth]{../contour_plots/"jacobi_contours".png}
+    \label{fig:test1}
+  \end{minipage}%
+  \begin{minipage}{.33\textwidth}
+    \centering
+    \includegraphics[height=1.\linewidth, width=\linewidth]{../contour_plots/"gauss_seidel_contours".png}
+    \label{fig:test2}
+  \end{minipage}
+  \begin{minipage}{.33\textwidth}
+    \centering
+    \includegraphics[height=1.\linewidth, width=\linewidth]{../contour_plots/"SOR_contours".png}
+    \label{fig:test2}
+  \end{minipage}
+  \end{figure}
+
+We see that very similar contour plots are generated using all three schemes as expected. The contour plots are generated for T = 5, 10, 25, 50, 100, 150, 200, 250.
+
+\end{document}
